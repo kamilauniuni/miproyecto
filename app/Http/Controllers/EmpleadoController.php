@@ -2,64 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\empleado;
+use App\Models\datosEmpleado;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        // Método index para mostrar una lista de empleados
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        // Método create para mostrar el formulario de creación de empleados
+        return view('empleados.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
-    {
-        //
+   {
+
+        $datosEmpleado = $request()->all();
+       return response()->json($datosEmpleado);
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(empleado $empleado)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(empleado $empleado)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, empleado $empleado)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(empleado $empleado)
-    {
-        //
-    }
 }
