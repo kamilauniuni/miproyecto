@@ -16,3 +16,8 @@ Route::get('empleados/create', [EmpleadoController::class, 'create']);
 
 // Ruta para manejar la solicitud POST del formulario de creación de empleados
 Route::resource('empleado', EmpleadoController::class);
+
+// Ruta para manejar la solicitud POST del formulario de creación de empleados
+Route::post('empleados', [EmpleadoController::class, 'store']);
+
+Route::get('/empleados/{empleado}/edit', [EmpleadoController::class, 'edit']);
